@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ENCRYPT</title>
+    <style>
+        body{
+        background-image:url("/static/image.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        }
+        .btn1{
+            margin-left: 10px;
+            margin-top: 10px;
+            background-color: rgb(93, 34, 202);
+            padding: 10px;
+            color:antiquewhite;
+            border-color: blue;
+            border-radius: 5px;
+            width: 10%;
+        }
+        .btn{
+            background-color: rgb(93, 34, 202);
+            padding: 10px;
+            color:antiquewhite;
+            border-color: blue;
+            border-radius: 5px;
+            width: 10%;
+        }
+        .align{
+            text-align: center;
+            
+            color: rgb(93, 34, 202);
+        }
+        .txt{
+            font-family: cursive;
+            font-size: 25px;
+        }
+        .header{
+            text-align: center;
+            color: rgb(93, 34, 202);
+            font-family: cursive;
+            font-size: 40px;
+        }
+    </style>
+</head>
+{% block content %}
+<body>
+    <input class = "btn1" type="button" value="RETURN" onclick="window.history.go(-1)" />
+    <br><br>
+    <div class="header">ENCRYPT IMAGE USING AES</div>
+
+    <br><br>
+    {% if error %}
+    <div class="container">
+    <div class="alert alert-danger alert-dismissible fade show">
+        {{ error }}
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+    </div> {% endif %} <br><br></div>
+    <form method = "post" enctype="multipart/form-data">
+        <div class="align">
+            <input type="file" id="file" name="file"/><br><br>
+         <label for="text" class="txt">ENTER KEY</label>
+            <input type="text" id="text" name="text">
+            <br><br>
+        <button class="btn" type="submit">ENCRYPT</button>
+    </div>
+    </form>
+</body>
+{% endblock %}
+</html>
